@@ -78,16 +78,30 @@ function scan() {
   } catch (e) {}
   setTimeout(scan,100)
 }
+async function startCapture(displayMediaOptions) {
+  let captureStream = null;
 
-navigator.mediaDevices
-.getUserMedia({ video: { facingMode: "environment" } })
-.then(function(stream) {
-  video.setAttribute("playsinline", true);
-  video.srcObject = stream;
-  video.play();
-  setTimeout(tick, 300);
-  scan()
-});
+  try {
+    captureStream = await navigator.mediaDevices.getUserMedia(displayMediaOptions);
+  } catch(err) {
+    console.error("Error: " + err);
+  }
+  return captureStream;
+}
+
+try {
+  startCapture({ video: { facingMode: "environment" },audio:false }).then(function(stream) {
+    video.setAttribute("playsinline", true);
+    video.srcObject = stream;
+    video.play();
+    setTimeout(tick, 300);
+    scan()
+  });
+} catch (error) {
+  console.log(error)
+}
+
+
 o.add(
   b.create.event("ojo","click",function(e,s){
     scanning = !scanning;
