@@ -1,12 +1,9 @@
 let ar = new ARboon(
     [
-        new texture("AB2","https://s32386.github.io/ArChem/image/l0_i2.png"),
-        new texture("AB3","https://s32386.github.io/ArChem/image/l0_i3.png"),
-        new texture("AB2E2","https://s32386.github.io/ArChem/image/l0_i4.png"),
-        new texture("AB4","https://s32386.github.io/ArChem/image/l0_i5.png"),
-        new texture("AB3E","https://s32386.github.io/ArChem/image/l0_i6.png"),
-        new texture("AB5","https://s32386.github.io/ArChem/image/l0_i7.png"),
-        new texture("AB6","https://s32386.github.io/ArChem/image/l0_i8.png")
+        new texture("Backstroke","https://s32386.github.io/image/kuncheang.gif"),
+        new texture("Breaststroke","https://s32386.github.io/image/kob.mp4"),
+        new texture("Butterfly","https://s32386.github.io/image/peesaut.gif"),
+        new texture("Freestyle","https://s32386.github.io/image/free.mp4")
     ]
 )
 ar.init()
